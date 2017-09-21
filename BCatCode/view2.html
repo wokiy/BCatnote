@@ -1,0 +1,367 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JasonLWY个人博客</title>
+<meta name="keywords" content="css3,html5," />
+<meta name="description" content="" />
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/view.css" rel="stylesheet">
+<!-- 返回顶部调用 begin -->
+    <!--    background: darkkhaki;
+-->
+<link href="css/lrtk.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--<script type="text/javascript" src="js/my.js"></script>-->
+<script type="text/javascript" src="js/header.js"></script>
+<!-- 返回顶部调用 end-->
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header id="top">
+  <nav id="nav">
+    <ul>
+        <li><a href="index2.html" >博客首页</a></li>
+        <li><a href="bookOn.html" target="_self" title="图书推荐">前端书籍</a></li>
+        <li><a href="pic.html" target="_self" title="技术探讨">摄影周边</a></li>
+        <li><a href="about.html" target="_self" title="关于博主   ">关于博主</a></li>
+    </ul>
+    <script src="js/silder.js"></script><!--获取当前页导航 高亮显示标题--> 
+  </nav>
+</header>
+<!--header end    189 183 107
+    background: rgba(189, 183, 107, 0.8);
+        background: rgba(189, 183, 60, 0.9);
+
+-->
+<div id="mainbody" style="background: darkkhaki">
+  <div class="blogs">
+    <div id="index_view">
+      <h2 class="t_nav"><a href="/">网站首页</a><a href="/">vue.js</a></h2>
+      <h1 class="c_titile">VUE.JS简介</h1>
+      <p class="box">发布时间：2017-08-25 <span>类别：JasonLWY</span> 阅读（30）评论(44)</p>
+      <ul>
+        <p> 你可能已经注意到 Vue 组件非常类似于自定义元素——它是 Web 组件规范的一部分，这是因为 Vue   的组件语法部分参考了该规范。例如 Vue 组件实现了 Slot API 与 is 特性。但是，还是有几个关键差别：
+        Web 组件规范仍然处于草案阶段，并且尚无浏览器原生实现。相比之下，Vue 组件不需要任何补丁，并且在所有支持的浏览器（IE9 及更高版本）之下表现一致。必要时，Vue 组件也可以包装于原生自定义元素之内。
+        Vue 组件提供了纯自定义元素所不具备的一些重要功能，最突出的是跨组件数据流，自定义事件通信以及构建工具集成 </p>
+        <p><img src="images/timg.jpg"></p>
+      <p> 
+          Vue.js（读音 /vjuː/，类似于 view） 是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue 也完全能够为复杂的单页应用程序提供驱动。
+          如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。
+          起步
+
+          官方指南假设你已有 HTML、CSS 和 JavaScript 中级前端知识。如果你刚开始学习前端开发，将框架作为你的第一步可能不是最好的主意——掌握好基础知识再来！之前有其他框架的使用经验对于学习 Vue.js 是有帮助的，但这不是必需的。
+
+          尝试 Vue.js 最简单的方法是使用 JSFiddle Hello World 例子。你可以在浏览器新标签页中打开它，跟着例子学习一些基础用法。或者你也可以创建一个 .html 文件，然后通过如下方式引入 Vue：
+          script src="https://unpkg.com/vue">/script>
+          你可以查看安装教程来了解其他安装 Vue 的选项。请注意我们不推荐新手直接使用 vue-cli，尤其是对 Node.js 构建工具不够了解的同学。
+          声明式渲染
+
+          Vue.js 的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进 DOM：
+            div id="app">
+            {{ message }}
+          /div>
+          var app = new Vue({
+            el: '#app',
+            data: {
+              message: 'Hello Vue!'
+            }
+          })
+
+          <p>
+                          Hello Vue!
+                我们已经生成了我们的第一个 Vue 应用！看起来这跟单单渲染一个字符串模板非常类似，但是 Vue 在背后做了大量工作。现在数据和 DOM 已经被绑定在一起，所有的元素都是响应式的。我们该如何知道呢？打开你的浏览器的控制台（就在这个页面打开），并修改 app.message，你将看到上例相应地更新。
+                除了文本插值，我们还可以采用这样的方式绑定 DOM 元素属性：
+                div id="app-2">
+                  span v-bind:title="message">
+                    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+                  /span>
+                /div>
+                var app2 = new Vue({
+                  el: '#app-2',
+                  data: {
+                    message: '页面加载于 ' + new Date().toLocaleString()
+                  }
+                })
+                鼠标悬停几秒钟查看此处动态绑定的提示信息！
+                这里我们遇到点新东西。你看到的 v-bind 属性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊属性。可能你已经猜到了，它们会在渲染的 DOM 上应用特殊的响应式行为。简言之，这里该指令的作用是：“将这个元素节点的 title 属性和 Vue 实例的 message 属性保持一致”。
+                再次打开浏览器的 JavaScript 控制台输入 app2.message = '新消息'，就会再一次看到这个绑定了 title 属性的 HTML 已经进行了更新。
+                条件与循环
+
+                控制切换一个元素的显示也相当简单：
+                div id="app-3">
+                  p v-if="seen">现在你看到我了/p>
+                /div>
+                var app3 = new Vue({
+                  el: '#app-3',
+                  data: {
+                    seen: true
+                  }
+                })
+                现在你看到我了
+                继续在控制台设置 app3.seen = false，你会发现 “现在你看到我了” 消失了。
+                这个例子演示了我们不仅可以绑定 DOM 文本到数据，也可以绑定 DOM 结构到数据。而且，Vue 也提供一个强大的过渡效果系统，可以在 Vue 插入/更新/删除元素时自动应用过渡效果。
+                还有其它很多指令，每个都有特殊的功能。例如，v-for 指令可以绑定数组的数据来渲染一个项目列表：
+                div id="app-4">
+                  ol>
+                    li v-for="todo in todos">
+                      {{ todo.text }}
+                    /li>
+                  /ol>
+                /div>
+                var app4 = new Vue({
+                  el: '#app-4',
+                  data: {
+                    todos: [
+                      { text: '学习 JavaScript' },
+                      { text: '学习 Vue' },
+                      { text: '整个牛项目' }
+                    ]
+                  }
+                })
+                </p>
+                <p>
+                学习 JavaScript
+                学习 Vue
+                整个牛项目
+                在控制台里，输入 app4.todos.push({ text: '新项目' })，你会发现列表中添加了一个新项。
+                处理用户输入
+
+                为了让用户和你的应用进行互动，我们可以用 v-on 指令绑定一个事件监听器，通过它调用我们 Vue 实例中定义的方法：
+                div id="app-5">
+                  p>{{ message }}/p>
+                  button v-on:click="reverseMessage">逆转消息 button>
+                /div
+                var app5 = new Vue({
+                  el: '#app-5',
+                  data: {
+                    message: 'Hello Vue.js!'
+                  },
+                  methods: {
+                    reverseMessage: function () {
+                      this.message = this.message.split('').reverse().join('')
+                    }
+                  }
+                })
+                Hello Vue.js!
+                逆转消息
+                注意在 reverseMessage 方法中，我们更新了应用的状态，但没有触碰 DOM——所有的 DOM 操作都由 Vue 来处理，你编写的代码不需要关注底层逻辑。
+                Vue 还提供了 v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定。
+</p>
+      </ul>
+      <div class="share"> 
+        <!-- Baidu Button BEGIN -->
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> 
+            <span class="bds_more">分享到：</span> 
+              <a class="bds_qzone"></a>
+              <a class="bds_tsina"></a> 
+              <a class="bds_tqq"></a>
+              <a class="bds_renren"></a> 
+              <a class="bds_t163"></a> 
+              <a class="shareCount"></a> 
+          </div>
+
+
+        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script> 
+        <script type="text/javascript" id="bdshell_js"></script> 
+        <script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script> 
+        <!-- Baidu Button END --> 
+        <!-- <p class="p_Traffic">关键字：<span>nue.js</span> <span>框架</span><span>路由原理</span></p> -->
+        <section>
+          <div class="pageController">  
+              <span>上一篇  <a href="#">Spring整合CXF之发布WebService服务</a></span>
+              <span>下一篇  <a style="color: gray;" href="javascript:">没有了</a></span>
+           </div>   
+        </section>
+      </div>
+       <hr class="hr1">
+      <div id=Ariala> 
+              <p>关键字&nbsp;:</p>
+              <ul>
+                    <li>vue.js</li>
+                    <li>框架</li>
+                    <li>路由原理</li>
+              </ul>
+        </div>
+        <!-- 评论信息 -->
+        <div class="data_list">
+                    <div class="data_list_title">评论信息</div>
+                    <div class="data_list_Lme">
+                        <div class="data_list_mess">
+                            <span>
+                                <font>1楼&nbsp;&nbsp;&nbsp;&nbsp;使徒子:</font>
+                                挺好的&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;2017-09-11&nbsp;]
+                            </span>    
+                        </div>
+                    </div>
+        </div>    
+<!-- 发表评论 -->
+      <div class="data_list">
+                <div class="data_list_title">发表评论</div>
+                <div class="date_list_commit">
+                      <div class="textarea_data">
+                          <textarea rows="5" id="content" rows="5" name="content" placeholder="问答问答" cols="120"></textarea>
+                      </div>
+
+                    <div class="flex_1">
+                          <div class="vecode">
+                                <strong>验证码</strong>&nbsp;:&nbsp;&nbsp;<input type="text" style="width: 90px; height: 20px;" name="imageCode" id="imageCode" size="10">
+                                <img src="images/img2.png"  alt="">
+                          </div>
+
+                          <div class="btn_comit">
+                                  <button class="btn btn-primay">发表评论</button>
+                          </div>
+                    </div>
+
+
+                </div>  
+                    
+      </div>
+
+
+      <div class="otherlink" style="display: none;">
+        <h2>相关文章</h2>
+
+        <ul>
+          <li><a href="/newstalk/mood/2013-07-24/518.html" title="我希望我的爱情是这样的">我希望我的爱情是这样的有种情谊，不是爱情，也算不得友情有种情谊，不是爱情，也算不得友情</a></li>
+          <li><a href="/newstalk/mood/2013-07-02/335.html" title="有种情谊，不是爱情，也算不得友情">有种情谊，不是爱情，也算不得友情有种情谊，不是爱情，也算不得友情有种情谊，不是爱情，也算不得友情</a></li>
+          <li><a href="/newstalk/mood/2013-07-01/329.html" title="世上最美好的爱情">世上最美好的爱情</a></li>
+          <li><a href="/news/read/2013-06-11/213.html" title="爱情没有永远，地老天荒也走不完">爱情没有永远，地老天荒也走不完</a></li>
+          <li><a href="/news/s/2013-06-06/24.html" title="爱情的背叛者">爱情的背叛者</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--bloglist end-->
+    <aside>
+      <div class="search">
+        <form class="searchform" method="get" action="#">
+          <input type="text" name="s" value="Search" onfocus="this.value=''" onblur="this.value='Search'">
+        </form>
+      </div>
+      <div class="sunnav">
+        <ul>
+          <li><a href="/web/" target="_blank" title="时间分类">时间分类</a></li>
+          <li><a href="/newshtml5/" target="_blank" title="javascript">javascript</a></li>
+          <li><a href="/jstt/" target="_blank" title="技术探讨">技术探讨</a></li>
+          <li><a href="/news/s/" target="_blank" title="杂文">杂文</a></li>
+        </ul>
+      </div>
+      <div class="tuijian">
+         <h2>技术分类</h2>
+        <ol>
+          <li><span><strong>1</strong></span><a href="/">VUE.JS大类</a></li>
+          <li><span><strong>2</strong></span><a href="/">react.js大类</a></li>
+          <li><span><strong>3</strong></span><a href="/">javascrit大类</a></li>
+          <li><span><strong>4</strong></span><a href="/">CSS3大类</a></li>
+          <li><span><strong>5</strong></span><a href="/">jQueryd库和插件大类</a></li>
+          <li><span><strong>6</strong></span><a href="/">后端java&php&node.js大类</a></li>
+          <li><span><strong>7</strong></span><a href="/">布局CSS+html5大类</a></li>
+          <li><span><strong>8</strong></span><a href="/">angularJS4技术大类</a></li>
+          <li><span><strong>9</strong></span><a href="/">认真的雪</a></li>
+        </ol>
+      </div>
+      <div class="toppic">
+        <h2>流行技术栏目</h2>
+        <ul>
+          <li><a href="https://facebook.github.io/react/docs/hello-world.html"><img src="images/i4.jpg">虚拟DOM打遍天下无敌手！
+            <p>快快学习</p>
+            </a></li>
+          <li><a href=""><img src="images/i2.jpg">angularJS在大型项目很受技术组的青睐！！~
+            <p>感兴趣</p>
+            </a></li>
+          <li><a href="https://cn.vuejs.org/"><img src="images/timg.jpg">vue.js不必多说，小巧灵活中小项目的青睐，必须好好掌握！！！。
+            <p>喜欢</p>
+            </a></li>
+        </ul>
+      </div>
+      <div class="clicks">
+         <h2>热门搜索</h2>
+        <ol>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          <li><span><a href="/">VUE框架API</a></span><a href="/">vue.js入门到放弃</a></li>
+          
+        </ol>
+      </div>
+    </aside>
+  </div>
+  <!--blogs end--> 
+</div>
+
+
+<!--mainbody end-->
+<!--mainbody end-->
+<footer>
+  <div class="footer-mid">
+    <div class="links">
+      <h2>友情链接</h2>
+      <ul>
+        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰个人博客</a></li>
+        <li><a href="https://www.liaoxuefeng.com/">廖雪峰的学习博客</a></li>
+        <li><a href="https://www.github.com/">Github</a></li>
+      </ul>
+    </div>
+    <div class="visitors">
+      <h2>最新评论</h2>
+      <dl>
+        <dt><img src="images/n3.jpg">
+        <dt>
+        <dd>汤姆
+          <time>33分钟前</time>
+        </dd>
+        <dd>在 <a href="http://www.yangqq.com/jstt/bj/2013-07-28/530.html" class="title">如果要学习web前端开发，需要学习什么？ </a>中评论：</dd>
+        <dd>好好学月入过万不是梦想！！！！！</dd>
+      </dl>
+      <dl>
+        <dt><img src="images/n2.jpg">
+        <dt>
+        <dd>阮一峰
+          <time>5小时前</time>
+        </dd>
+        <dd>在 <a href="http://www.yangqq.com/news/s/2013-07-31/533.html" class="title">
+        flax布局需要注意什么？</a>中评论：</dd>
+        <dd>好好看的博客，我已经写得很清楚了！！！！！</dd>
+      </dl>
+      <dl>
+        <dt><img src="images/n1.jpg">
+        <dt>
+        <dd>小林博客
+          <time>8月7日</time>
+        </dd>
+        <dd>在 <a href="http://www.yangqq.com/jstt/bj/2013-06-18/285.html" class="title">vue.js在开发大型项目的短板？ </a>中评论：</dd>
+        <dd>博客写得很独到，希望下次更新！！！！</dd>
+      </dl>
+    </div>
+    <section class="flickr" >
+      <h2>前端官网</h2>
+      <ul>
+        <li><a href="/"><img src="images/i1.jpg"></a></li>
+        <li><a href="/"><img src="images/i2.jpg"></a></li>
+        <li><a href="/"><img src="images/i3.jpg"></a></li>
+        <li><a href="/"><img src="images/i4.jpg"></a></li>
+        <li><a href="/"><img src="images/i5.jpg"></a></li>
+        <li><a href="/"><img src="images/n1.jpg"></a></li>
+        <li><a href="/"><img src="images/n2.jpg"></a></li>
+        <li><a href="/"><img src="images/n3.jpg"></a></li>
+        <li><a href="/"><img src="images/n4.jpg"></a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="footer-bottom">
+  <p>JasonLWY <a href="http://www.github.com">@ MY github</a></p>
+  </div>
+</footer>
+<!-- jQuery仿腾讯回顶部和建议 代码开始 -->
+<div id="tbox"> <a id="togbook" href="/e/tool/gbook/?bid=1"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+<!-- 代码结束 -->

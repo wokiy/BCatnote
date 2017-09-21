@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="js/waterfall.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="layer-v3.1.0/layer/layer.js"></script>
+    <link rel="stylesheet" href="css/layer.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        *{padding: 0;margin:0;}
+        #main{
+            position: relative;
+        }
+        .pin{
+            padding: 15px 0 0 15px;
+            float:left;
+        }
+        .box{
+            padding: 10px;
+            border:1px solid #ccc;
+            box-shadow: 0 0 6px #ccc;
+            border-radius: 5px;
+        }
+        .box img{
+            width:162px;
+            height:auto;
+        }
+    </style>
+    <script>
+        //调用示例
+        $(function () {
+            $("#main img").each(function () {
+                $(this).click(function () {
+                    /* layer.photos({
+                         photos: '#layer-photos-demo'
+                         , anim: 4 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+                     });*/
+                    layer.photos({
+                        photos: '#main',
+                        tab: function(pic, layero){
+                            console.log(pic) //当前图片的一些信息
+                        }
+                    });
+                })
+            })
+        });
+    </script>
+</head>
+<body style="background:darkcyan;">
+<header id="top" style="background: darkcyan">
+    <nav id="nav">
+        <ul>
+            <li><a href="index2.html" target="_self">博客首页</a></li>
+            <li><a href="bookOn.html" target="_self" title="图书推荐">前端书籍</a></li>
+            <li><a href="pic.html" target="_self" title="技术探讨">摄影周边</a></li>
+            <li><a href="about.html" target="_self" title="关于博主">关于博主</a></li>
+            <li><a href="show.html" target="_self" title="摄影展示">摄影展示</a></li>
+        </ul>
+        <div class="search1">
+            <form class="searchform" method="get" action="#">
+                <input type="text" name="s" value="搜搜" onfocus="this.value=''" onblur="this.value='Search'">
+            </form>
+        </div>
+        <script src="js/silder.js"></script><!--获取当前页导航 高亮显示标题-->
+    </nav>
+</header>
+<div id="main">
+    <div class="pin">
+        <div class="box">
+            <img src="./img/1.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/2.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/3.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/4.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/5.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/6.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/7.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/8.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/9.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/10.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/11.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/12.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/13.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/14.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/15.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/16.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/17.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/18.jpg"/>
+        </div>
+    </div>
+ <div class="pin">
+        <div class="box">
+            <img src="./img/19.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/20.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/21.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/22.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/23.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/24.jpg"/>
+        </div>
+    </div>
+    <div class="pin">
+        <div class="box">
+            <img src="./img/25.jpg"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

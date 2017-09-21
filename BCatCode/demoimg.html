@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/layer.js"></script>
+
+    <script>
+        //调用示例
+        $(function () {
+            $("#layer-photos-demo img").each(function () {
+                $(this).click(function () {
+                    layer.photos({
+                        photos: '#layer-photos-demo'
+                        ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+                    });
+                })
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+
+<div id="layer-photos-demo" class="layer-photos-demo">
+    <img layer-pid="图片id，可以不写" layer-src="images/j1.jpg" src="images/j1.jpg" alt="图片名">
+    <img layer-pid="图片id，可以不写" layer-src="images/j2.jpg" src="images/j2.jpg" alt="图片名">
+</div>
+</body>
+</html>
